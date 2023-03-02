@@ -34,7 +34,7 @@ namespace WebLinks
                 }
                 else if (command == "load")
                 {
-                    LoadFile("WebLinks.txt");
+                    LoadFile("Weblinks.txt");
                 }
                 else if (command == "open")
                 {
@@ -128,6 +128,8 @@ namespace WebLinks
                 {
 
                 };
+                Console.WriteLine(delar[a]);
+                a++;
             }
         }
 
