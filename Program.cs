@@ -90,9 +90,15 @@ namespace WebLinks
         private static void LoadFile(string file)
         {
             string[] rader = File.ReadAllLines(file);
+            Weblink[] Länkar = new Weblink[rader.Length];
+            int a = 0;
             foreach (string r in rader)
             {
-
+                string[] delar = r.Split (',');
+                Länkar[a] = new Weblink()
+                {
+                    
+                }
             }
         }
 
