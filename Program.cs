@@ -51,6 +51,18 @@ namespace WebLinks
                     Console.Write("Add new Link by typing \"linkname,description,URL\": ");
                     string newLink = Console.ReadLine();
                     AddLink(newLink);
+
+                    //Hade detta kunna vara ett upplägg på hur vi skriver ut vad som ska skrivas in?
+                    /*
+                    string addLink, addDescription, addURL;
+                    Console.WriteLine("Add a linkname: ");
+                    addLink = Console.ReadLine();
+                    Console.WriteLine("Add a description: ");
+                    addDescription = Console.ReadLine();
+                    Console.WriteLine("Add a URL: ");
+                    addURL = Console.ReadLine();
+                    */
+                    
                 }
                 else if (command == "save standard file")
                 {   
