@@ -4,7 +4,7 @@ namespace WebLinks
 {
     internal class Program
     {
-        class Weblink
+        public class Weblink
         {
             string länknamn, beskrivning, URL;
 
