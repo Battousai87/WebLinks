@@ -78,7 +78,11 @@ namespace WebLinks
 
         private static void LoadFile(string file)
         {
-            
+            string[] rader = File.ReadAllLines(file);
+            foreach (string r in rader)
+            {
+
+            }
         }
 
         private static void NotYetImplemented(string command)
