@@ -128,7 +128,11 @@ namespace WebLinks
                 {
 
                 };
-                Console.WriteLine(delar[a]);
+                int j = 0;
+                foreach (string del in delar) {
+                    Console.WriteLine(delar[j]);
+                    j++;
+                }   
                 a++;
             }
         }
