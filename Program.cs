@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using System.Diagnostics;
+using System.Xml.Linq;
 
 namespace WebLinks
 {
@@ -37,7 +38,9 @@ namespace WebLinks
                 }
                 else if (command == "open")
                 {
-                    OpenLink("WebLinks.txt");
+                    Console.Write("Linkname: ");
+                    string linkName = Console.ReadLine();
+                    OpenLink(linkName);
                 }
                 else if (command == "print")
                 {
@@ -82,9 +85,26 @@ namespace WebLinks
             
         }
 
-        private static void OpenLink(string file)
+        private static void OpenLink(string linkName)
         {
-            
+            /*
+            foreach (Link link in linksArray) {
+                if (string.Compare(linkName, link.linkName)) {
+                    Process proc = new Process();
+                    proc.StartInfo.UseShellExecute = true;
+                    proc.StartInfo.FileName = link.URL;
+                    proc.Start();
+                    proc.WaitForExit();
+                }
+            }
+            */
+
+            Process proc = new Process();
+            proc.StartInfo.UseShellExecute = true;
+            proc.StartInfo.FileName = linkName; //Hela länken
+            proc.Start();
+            proc.WaitForExit();
+
         }
 
         private static void LoadFile(string file)
