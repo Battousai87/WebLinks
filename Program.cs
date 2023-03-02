@@ -118,7 +118,7 @@ namespace WebLinks
 
         private static void LoadFile(string file)
         {
-            string[] rader = File.ReadAllLines("WebLinks.txt");
+            string[] rader = File.ReadAllLines(@"C:\Users\kebac\source\repos\WebLinks\Weblinks.txt");
             Weblink[] Länkar = new Weblink[rader.Length];
             int a = 0;
             foreach (string r in rader)
@@ -130,9 +130,6 @@ namespace WebLinks
                     beskrivning = delar[1],
                     URL = delar[2],
                 };
-                a++;
-
-                };
                 int j = 0;
                 foreach (string del in delar) {
                     Console.WriteLine(delar[j]);
@@ -140,7 +137,7 @@ namespace WebLinks
                 }   
                 a++;
             }
-            Console.WriteLine(Länkar[0]);
+            Länkar[0].Print();
         }
 
         private static void NotYetImplemented(string command)
