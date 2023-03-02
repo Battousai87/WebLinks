@@ -48,10 +48,12 @@ namespace WebLinks
                 }
                 else if (command == "add link")
                 {
-                    AddLink("");
+                    Console.Write("Add new Link by typing \"linkname,description,URL\": ");
+                    string newLink = Console.ReadLine();
+                    AddLink(newLink);
                 }
                 else if (command == "save standard file")
-                {
+                {   
                     SaveStandardFile();
                 }
                 else if (command == "save to file")
@@ -77,7 +79,14 @@ namespace WebLinks
 
         private static void AddLink(string link)
         {
-            
+            string[] splittedLink = link.Split(',');
+            Weblink newLink = new Weblink();
+            newLink.länknamn = splittedLink[0];
+            newLink.beskrivning = splittedLink[1];
+            newLink.URL = splittedLink[2];
+
+            File.AppendAllText("TODO", link);//TODO lägg till filnamn.
+
         }
 
         private static void PrintFile(string file)
