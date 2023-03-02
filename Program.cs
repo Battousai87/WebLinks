@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Xml.Linq;
+using static WebLinks.Program;
 
 namespace WebLinks
 {
@@ -108,24 +109,31 @@ namespace WebLinks
 
         private static void OpenLink(string linkName)
         {
-            /*
-            foreach (Link link in linksArray) {
-                if (string.Compare(linkName, link.linkName)) {
+            string[] rows = File.ReadAllLines("..\\..\\..\\Weblinks.txt");
+            Weblink[] links = new Weblink[rows.Length];
+
+            for (int i = 0; i < rows.Length; i++) {
+                string[] splittedRow = rows[i].Split(',');
+
+                Weblink newLink = new Weblink();
+                newLink.länknamn = splittedRow[0];
+                newLink.beskrivning = splittedRow[1];
+                newLink.URL = splittedRow[2];
+                links[i] = (newLink);
+            }
+
+            foreach (Weblink link in links) {
+                if (string.Compare(linkName, link.länknamn ) == 0) {
                     Process proc = new Process();
                     proc.StartInfo.UseShellExecute = true;
                     proc.StartInfo.FileName = link.URL;
                     proc.Start();
                     proc.WaitForExit();
+                    break;
                 }
             }
-            */
-
-            Process proc = new Process();
-            proc.StartInfo.UseShellExecute = true;
-            proc.StartInfo.FileName = linkName; //Hela länken
-            proc.Start();
-            proc.WaitForExit();
-
+            Console.WriteLine("Linkname could not be found!");
+            
         }
 
         private static void LoadFile(string file)

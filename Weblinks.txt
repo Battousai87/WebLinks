@@ -1,3 +1,3 @@
-rad1,col2,col3
-rad2,rad2col2,rad2col3
-asd,dfg,ghj
+google,Googles Hemsida,https://www.google.com/
+w3schools,W3Schools Hemsida,https://www.w3schools.com/
+youtube,Youtubes Hemsida,https://www.youtube.com/
