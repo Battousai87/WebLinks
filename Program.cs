@@ -70,14 +70,21 @@ namespace WebLinks
             
         }
 
-        private static void SaveStandardFile()
+        private static void SaveStandardFile(Weblink newLink)
         {
             
         }
 
         private static void AddLink(string link)
         {
-            
+            string[] splittedLink = link.Split(',');
+            Weblink newLink = new Weblink();
+            newLink.länknamn = splittedLink[0];
+            newLink.beskrivning = splittedLink[1];
+            newLink.URL = splittedLink[2];
+
+            SaveStandardFile(newLink);
+
         }
 
         private static void PrintFile(string file)
