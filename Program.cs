@@ -1,4 +1,6 @@
-﻿namespace WebLinks
+﻿using System.Xml.Linq;
+
+namespace WebLinks
 {
     internal class Program
     {
@@ -20,17 +22,63 @@
                 }
                 else if (command == "load")
                 {
-                    NotYetImplemented(command);
+                    LoadFile("WebLinks.txt");
                 }
                 else if (command == "open")
                 {
-                    NotYetImplemented(command);
+                    OpenLink("WebLinks.txt");
+                }
+                else if (command == "print")
+                {
+                    PrintFile("Weblinks.txt");
+                }
+                else if (command == "add link")
+                {
+                    AddLink("");
+                }
+                else if (command == "save standard file")
+                {
+                    SaveStandardFile();
+                }
+                else if (command == "save to file")
+                {
+                    SaveToFile();
                 }
                 else
                 {
                     Console.WriteLine($"Unknown command '{command}'");
                 }
             } while (command != "quit");
+        }
+
+        private static void SaveToFile()
+        {
+            
+        }
+
+        private static void SaveStandardFile()
+        {
+            
+        }
+
+        private static void AddLink(string link)
+        {
+            
+        }
+
+        private static void PrintFile(string file)
+        {
+            
+        }
+
+        private static void OpenLink(string file)
+        {
+            
+        }
+
+        private static void LoadFile(string file)
+        {
+            
         }
 
         private static void NotYetImplemented(string command)
@@ -55,5 +103,6 @@
             };
             foreach (string h in hstr) Console.WriteLine(h);
         }
+        
     }
 }
