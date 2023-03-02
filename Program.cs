@@ -34,7 +34,7 @@ namespace WebLinks
                 }
                 else if (command == "load")
                 {
-                    LoadFile("WebLinks.txt");
+                    LoadFile("Weblinks.txt");
                 }
                 else if (command == "open")
                 {
@@ -131,6 +131,14 @@ namespace WebLinks
                     URL = delar[2],
                 };
                 a++;
+
+                };
+                int j = 0;
+                foreach (string del in delar) {
+                    Console.WriteLine(delar[j]);
+                    j++;
+                }   
+                a++;
             }
             Console.WriteLine(Länkar[0]);
         }
@@ -153,7 +161,8 @@ namespace WebLinks
                 "help  - display this help",
                 "load  - load all links from a file",
                 "open  - open a specific link",
-                "quit  - quit the program"
+                "quit  - quit the program",
+                "add link  -  add a new link"
             };
             foreach (string h in hstr) Console.WriteLine(h);
         }
