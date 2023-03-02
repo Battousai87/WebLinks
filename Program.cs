@@ -4,6 +4,17 @@ namespace WebLinks
 {
     internal class Program
     {
+        class Weblink
+        {
+            string länknamn, beskrivning, URL;
+
+            public void Print()
+            {
+                Console.WriteLine($"Angiven länk: {länknamn}");
+                Console.WriteLine($"    Beskrivning av länk: {beskrivning}");
+                Console.WriteLine($"    URL: {URL}");
+            }
+        }
         static void Main(string[] args)
         {
             PrintWelcome();
