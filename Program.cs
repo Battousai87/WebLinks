@@ -118,7 +118,7 @@ namespace WebLinks
 
         private static void LoadFile(string file)
         {
-            string[] rader = File.ReadAllLines(@"C:\Users\kebac\source\repos\WebLinks\Weblinks.txt");
+            string[] rader = File.ReadAllLines("..\\..\\..\\Weblinks.txt");
             Weblink[] Länkar = new Weblink[rader.Length];
             int a = 0;
             foreach (string r in rader)
