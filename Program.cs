@@ -126,8 +126,8 @@ namespace WebLinks
                 string[] delar = r.Split (',');
                 Länkar[a] = new Weblink()
                 {
-                    
-                }
+
+                };
             }
         }
 
@@ -149,7 +149,8 @@ namespace WebLinks
                 "help  - display this help",
                 "load  - load all links from a file",
                 "open  - open a specific link",
-                "quit  - quit the program"
+                "quit  - quit the program",
+                "add link  -  add a new link"
             };
             foreach (string h in hstr) Console.WriteLine(h);
         }
