@@ -109,7 +109,7 @@ namespace WebLinks
 
         private static void LoadFile(string file)
         {
-            string[] rader = File.ReadAllLines(file);
+            string[] rader = File.ReadAllLines("WebLinks.txt");
             Weblink[] Länkar = new Weblink[rader.Length];
             int a = 0;
             foreach (string r in rader)
@@ -117,9 +117,13 @@ namespace WebLinks
                 string[] delar = r.Split (',');
                 Länkar[a] = new Weblink()
                 {
-                    
-                }
+                    länknamn = delar[0],
+                    beskrivning = delar[1],
+                    URL = delar[2],
+                };
+                a++;
             }
+            Console.WriteLine(Länkar[0]);
         }
 
         private static void NotYetImplemented(string command)
