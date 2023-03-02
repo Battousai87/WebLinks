@@ -6,7 +6,7 @@ namespace WebLinks
     {
         public class Weblink
         {
-            string länknamn, beskrivning, URL;
+            public string länknamn, beskrivning, URL;
 
             public void Print()
             {
