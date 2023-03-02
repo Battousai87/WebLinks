@@ -85,7 +85,7 @@ namespace WebLinks
             newLink.beskrivning = splittedLink[1];
             newLink.URL = splittedLink[2];
 
-            File.AppendAllText("Weblinks.txt", link);
+            File.AppendAllText("..\\..\\..\\Weblinks.txt", link);
 
         }
 
