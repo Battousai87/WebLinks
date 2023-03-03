@@ -49,12 +49,6 @@ namespace WebLinks
                 }
                 else if (command == "add link")
                 {
-                    Console.Write("Add new Link by typing \"linkname,description,URL\": ");
-                    string newLink = Console.ReadLine();
-                    AddLink(newLink);
-
-                    //Hade detta kunna vara ett upplägg på hur vi skriver ut vad som ska skrivas in?
-                    /*
                     string addLink, addDescription, addURL;
                     Console.WriteLine("Add a linkname: ");
                     addLink = Console.ReadLine();
@@ -62,7 +56,13 @@ namespace WebLinks
                     addDescription = Console.ReadLine();
                     Console.WriteLine("Add a URL: ");
                     addURL = Console.ReadLine();
-                    */
+                    AddLink(addLink, addDescription, addURL);
+                    
+                    //Console.Write("Add new Link by typing \"linkname,description,URL\": ");
+                    //string newLink = Console.ReadLine();
+                    //AddLink(newLink);
+
+                    //Hade detta kunna vara ett upplägg på hur vi skriver ut vad som ska skrivas in?
                     
                 }
                 else if (command == "save standard file")
@@ -89,17 +89,24 @@ namespace WebLinks
         {
             
         }
+        private static void AddLink(string addLink, string addDescription, string addURL)
+        {   
+            Weblink newLink = new Weblink();
+            newLink.länknamn = addLink;
+            newLink.beskrivning = addDescription;
+            newLink.URL = addURL;
+            File.AppendAllText("..\\..\\..\\Weblinks.txt", addLink);
+            File.AppendAllText("..\\..\\..\\Weblinks.txt", addDescription);
+            File.AppendAllText("..\\..\\..\\Weblinks.txt", addURL);
 
-        private static void AddLink(string link)
-        {
-            string[] splittedLink = link.Split(',');
+            /*string[] splittedLink = link.Split(',');
             Weblink newLink = new Weblink();
             newLink.länknamn = splittedLink[0];
             newLink.beskrivning = splittedLink[1];
             newLink.URL = splittedLink[2];
 
             File.AppendAllText("..\\..\\..\\Weblinks.txt", link);
-
+            */
         }
 
         private static void PrintFile(string file)
