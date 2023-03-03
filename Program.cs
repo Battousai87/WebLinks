@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Reflection.Emit;
 using System.Xml.Linq;
 using static WebLinks.Program;
 
@@ -74,6 +75,10 @@ namespace WebLinks
                     //string newLink = Console.ReadLine();
                     //AddLink(newLink);
                 }
+                else if (command == "zadd link")
+                {
+                    AddLinkWithZenity();
+                }
                 else if (command == "save standard file")
                 {   
                     SaveStandardFile();
@@ -119,6 +124,31 @@ namespace WebLinks
             newLink.URL = splittedLink[2];
 
             File.AppendAllText("..\\..\\..\\Weblinks.txt", link);
+            */
+        }
+
+        private static void AddLinkWithZenity()
+        {
+            using (Process process = new Process())
+            {
+                string fullPathProgram = @"..\..\..\zenity.exe";
+                string zenityArgs = $"--forms --add-entry=\"Link name\" \\ --add-entry=\"Description\" \\ --add-entry=\"URL\"";
+                process.StartInfo.FileName = fullPathProgram;
+                process.StartInfo.Arguments = zenityArgs;
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.Start();
+            }
+            /*
+            Weblink newLink = new Weblink();
+
+            newLink.länknamn = addLink;
+            newLink.beskrivning = addDescription;
+            newLink.URL = addURL;
+            File.AppendAllText("..\\..\\..\\Weblinks.txt", "\n");
+            File.AppendAllText("..\\..\\..\\Weblinks.txt", $"{addLink},");
+            File.AppendAllText("..\\..\\..\\Weblinks.txt", $"{addDescription},");
+            File.AppendAllText("..\\..\\..\\Weblinks.txt", $"{addURL}");
             */
         }
 
@@ -208,7 +238,8 @@ namespace WebLinks
                 "load  - load all links from a file",
                 "open  - open a specific link",
                 "quit  - quit the program",
-                "add link  -  add a new link"
+                "add link  -  add a new link",
+                "new file name  -  create a new file"
             };
             foreach (string h in hstr) Console.WriteLine(h);
         }
