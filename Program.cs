@@ -70,7 +70,9 @@ namespace WebLinks
                 }
                 else if (command == "save to file")
                 {
-                    SaveToFile();
+                    Console.Write("New file name: ");
+                    string newFileName = Console.ReadLine();
+                    SaveToFile(newFileName);
                 }
                 else
                 {
@@ -79,9 +81,10 @@ namespace WebLinks
             } while (command != "quit");
         }
 
-        private static void SaveToFile()
+        private static void SaveToFile(string newFileName)
         {
-            
+            string filePath = $"..\\..\\..\\{newFileName}.txt";
+            File.Copy("..\\..\\..\\Weblinks.txt", filePath);
         }
 
         private static void SaveStandardFile()
