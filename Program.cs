@@ -35,7 +35,17 @@ namespace WebLinks
                 }
                 else if (command == "load")
                 {
-                    LoadFile("Weblinks.txt");
+                    
+                    Console.WriteLine("File name(leave empty for Weblinks.txt: ");
+                    string file = Console.ReadLine();
+                    if (file=="")
+                    {
+                        LoadFile("Weblinks");
+                    }
+                    else
+                    { 
+                        LoadFile(file);
+                    }
                 }
                 else if (command == "open")
                 {
@@ -154,7 +164,7 @@ namespace WebLinks
 
         private static void LoadFile(string file)
         {
-            string[] rader = File.ReadAllLines("..\\..\\..\\Weblinks.txt");
+            string[] rader = File.ReadAllLines($"..\\..\\..\\{file}.txt");
             Weblink[] Länkar = new Weblink[rader.Length];
             int a = 0;
             foreach (string r in rader)
