@@ -198,7 +198,8 @@ namespace WebLinks
                 "load  - load all links from a file",
                 "open  - open a specific link",
                 "quit  - quit the program",
-                "add link  -  add a new link"
+                "add link  -  add a new link",
+                "new file name  -  create a new file"
             };
             foreach (string h in hstr) Console.WriteLine(h);
         }
