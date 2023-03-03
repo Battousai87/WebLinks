@@ -14,7 +14,7 @@ namespace WebLinks
             {
                 Console.WriteLine($"Angiven länk: {länknamn}");
                 Console.WriteLine($"    Beskrivning av länk: {beskrivning}");
-                Console.WriteLine($"    URL: {URL}");
+                Console.WriteLine($"    URL: {URL}\n");
             }
         }
         static void Main(string[] args)
@@ -150,15 +150,17 @@ namespace WebLinks
                     beskrivning = delar[1],
                     URL = delar[2],
                 };
-                int j = 0;
+                /*int j = 0;
                 foreach (string del in delar) {
                     Console.WriteLine(delar[j]);
-                    j++;
-                }   
+                    j++;*/
+                Länkar[a].Print();
                 a++;
-            }
-            Länkar[0].Print();
+            }   
+            
+        
         }
+        
 
         private static void NotYetImplemented(string command)
         {
