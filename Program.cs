@@ -239,6 +239,7 @@ namespace WebLinks
                 "open  - open a specific link",
                 "quit  - quit the program",
                 "add link  -  add a new link",
+                "zadd link - add a new link with zenity",
                 "new file name  -  create a new file"
             };
             foreach (string h in hstr) Console.WriteLine(h);
