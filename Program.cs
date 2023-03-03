@@ -129,6 +129,8 @@ namespace WebLinks
                 links[i] = (newLink);
             }
 
+            bool linkNameNotFound = true;
+
             foreach (Weblink link in links) {
                 if (string.Compare(linkName, link.länknamn ) == 0) {
                     Process proc = new Process();
@@ -136,10 +138,14 @@ namespace WebLinks
                     proc.StartInfo.FileName = link.URL;
                     proc.Start();
                     proc.WaitForExit();
+                    linkNameNotFound = false;
                     break;
                 }
             }
-            Console.WriteLine("Linkname could not be found!");
+            if (linkNameNotFound) {
+                Console.WriteLine("Linkname could not be found!");
+            }
+            
             
         }
 
